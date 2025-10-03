@@ -6,7 +6,7 @@ headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/
 rs = requests.get(url, headers=headers, timeout=30)
 rs.raise_for_status()
 
-date_str = dt.date.today().isoformat()          # 2025-10-03
+date_str = dt.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
 file_path  = f'data/{date_str}.json'
 
 os.makedirs('data', exist_ok=True)
